@@ -47,7 +47,7 @@ public class TipsTask extends PluginTask<HotPotato> {
             for (String string : language.gameTimeScoreBoard.split("\n")) {
                 ms.add(string.replace("%time%", this.room.gameTime + "")
                         .replace("%playerNumber%", playerNumber + "")
-                        .replace("%round%", this.room.roundCount + ""));
+                        .replace("%round%", this.room.roundCount + 1 + ""));
             }
             for (Player player : this.room.getPlayers().keySet()) {
                 if (!this.bossBarMap.containsKey(player)) {
@@ -62,11 +62,11 @@ public class TipsTask extends PluginTask<HotPotato> {
                 }
                 DummyBossBar bossBar = this.bossBarMap.get(player);
                 if (!player.getDummyBossBars().containsKey(bossBar.getBossBarId())) {
-                    player.createBossBar(bossBar);
+                    //player.createBossBar(bossBar);
                 }
                 bossBar.setLength(((this.room.gameTime * 1.0F) / this.room.getSetGameTime()) * 100);
                 bossBar.setText("§l§c" + this.room.gameTime);
-                player.sendTip(this.language.gameTimeBottom.replace("%time%", this.room.gameTime + "")
+                player.sendActionBar(this.language.gameTimeBottom.replace("%time%", this.room.gameTime + "")
                         .replace("%playerNumber%", playerNumber + ""));
                 owner.getIScoreboard().showScoreboard(player, this.language.scoreBoardTitle, ms);
             }

@@ -89,8 +89,7 @@ public class HotPotato extends PluginBase {
     
     @Override
     public void onEnable() {
-        this.getLogger().info("§e插件开始加载！本插件是免费哒~如果你花钱了，那一定是被骗了~");
-        this.getLogger().info("§l§e版本: " + VERSION);
+        this.getLogger().info("§e插件开始加载！");
         //加载计分板
         this.iScoreboard = ScoreboardUtil.getScoreboard();
         //检查Tips

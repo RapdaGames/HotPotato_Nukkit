@@ -179,7 +179,7 @@ public class PlayerGameListener implements Listener {
             if (tag.getBoolean("isHotPotatoItem") && tag.getInt("HotPotatoType") == 10) {
                 event.setCancelled(true);
                 room.quitRoom(player);
-                player.sendMessage(this.language.quitRoom);
+                //player.sendMessage(this.language.quitRoom);
             }
         }
     }
@@ -246,14 +246,14 @@ public class PlayerGameListener implements Listener {
             return;
         }
         if (room.getPlayerMode(player) == 0) {
-            String message = "§7[§cDeath§7]§r " + player.getName() + " §b>>>§r " + event.getMessage();
+            String message = "§7[§6烫手山芋§7]§b " + player.getName() + "§7说 ：§r" + event.getMessage();
             for (Map.Entry<Player, Integer> entry : room.getPlayers().entrySet()) {
                 if (entry.getValue() == 0) {
                     entry.getKey().sendMessage(message);
                 }
             }
         }else {
-            String message = "§7[§aRoom§7]§r " + player.getName() + " §b>>>§r " + event.getMessage();
+            String message = "§7[§a烫手山芋§7]§r " + player.getName() + " §b>>>§r " + event.getMessage();
             room.getPlayers().keySet().forEach(p -> p.sendMessage(message));
         }
         event.setMessage("");

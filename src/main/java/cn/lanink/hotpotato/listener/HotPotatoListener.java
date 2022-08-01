@@ -122,6 +122,7 @@ public class HotPotatoListener implements Listener {
             Tools.setPlayerInvisible(player, true);
             player.getLevel().addParticle(new HugeExplodeSeedParticle(player));
             Tools.playSound(room, Sound.RANDOM_EXPLODE);
+            player.sendTitle("§l§c爆炸啦","");
         }
     }
 

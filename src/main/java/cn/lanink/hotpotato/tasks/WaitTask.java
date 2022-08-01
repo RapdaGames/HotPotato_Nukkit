@@ -41,7 +41,7 @@ public class WaitTask extends PluginTask<HotPotato> {
                             .replace("%time%", room.waitTime + ""));
                 }
                 for (Player player : this.room.getPlayers().keySet()) {
-                    player.sendTip(this.language.waitTimeBottom
+                    player.sendActionBar(this.language.waitTimeBottom
                             .replace("%playerNumber%", this.room.getPlayers().size() + "")
                             .replace("%time%", this.room.waitTime + ""));
                     owner.getIScoreboard().showScoreboard(player, this.language.scoreBoardTitle, ms);
@@ -59,7 +59,7 @@ public class WaitTask extends PluginTask<HotPotato> {
                 ms.add(string.replace("%playerNumber%", room.getPlayers().size() + ""));
             }
             for (Player player : this.room.getPlayers().keySet()) {
-                player.sendTip(language.waitBottom
+                player.sendActionBar(language.waitBottom
                         .replace("%playerNumber%", room.getPlayers().size() + ""));
                 owner.getIScoreboard().showScoreboard(player, this.language.scoreBoardTitle, ms);
             }

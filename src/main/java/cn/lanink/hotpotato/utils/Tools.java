@@ -97,7 +97,7 @@ public class Tools {
                 givePotato(player);
                 break;
             case 10:
-                Item item = Item.get(324, 0, 1);
+                Item item = Item.get(437, 0, 1);
                 item.setNamedTag(new CompoundTag()
                         .putBoolean("isHotPotatoItem", true)
                         .putInt("HotPotatoType", 10));
@@ -110,6 +110,7 @@ public class Tools {
 
     public static void givePotato(Player player) {
         Item item = Item.get(393, 0, 1);
+        item.setCustomName("§r§f§l§e烫手的山芋");
         PlayerInventory inventory = player.getInventory();
         for (int i = 0; i < 9; i++) {
             inventory.setItem(i, item);
@@ -150,7 +151,7 @@ public class Tools {
         player.setHealth(player.getMaxHealth());
         player.getFoodData().setLevel(player.getFoodData().getMaxLevel());
         player.setNameTag(player.getName());
-        player.setGamemode(0);
+        player.setGamemode(2);
         if (joinRoom) {
             player.setAllowModifyWorld(false);
         }else {

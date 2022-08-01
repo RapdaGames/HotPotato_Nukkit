@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: C:\Users\29347\Desktop\HotPotato_Nukkit\HotPotato_Nukkit-mas
+ ter\src\main\java\cn\lanink\hotpotato\HotPotato.java
+
